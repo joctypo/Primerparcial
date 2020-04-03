@@ -13,15 +13,10 @@ public class Logic {
 	private NombreContenidoCompare ncc;
 	private TipoContenidoCompare tcc;
 	private int ordenado;
-	private PImage imagefinal;
 	
 	
-	private PImage breaking;
-	private PImage dark;
-	private PImage the;
-	private PImage ozark;
-	private PImage star;
-	private PImage mindhunter;
+	
+
 	
 	
 	
@@ -32,7 +27,6 @@ public class Logic {
 		acc = new AñoContenidoCompare();
 		ncc = new NombreContenidoCompare();
 		tcc = new TipoContenidoCompare();
-		//breaking=app.loadImage("../data/imports/img/breakingbad.jpg");
 		
 		info1=app.loadStrings("../data/imports/netflix.txt");
 		
@@ -46,32 +40,14 @@ public class Logic {
 			int año=Integer.parseInt(netflix1[1]);
 			int rating = Integer.parseInt(netflix1[2]);
 			String tipoc = netflix1[3];
-			
-			
-			
-			
-			for(int j=0;j<netflix1.length;j++) {
-				
-				String[] partir = nombre.split(" ");
-				partir[0].toLowerCase();
-				System.out.println(partir[0]);
-				if(partir.length==1) {
-					
-					//imagefinal= app.loadImage("../data/imports/img/"+partir[0]+".jpg");
-				}else {
-					
-					//String nombreimage= partir[0]+partir[1];
-					//imagefinal= app.loadImage("../data/imports/img/"+nombreimage+".jpg");
-				}
-			}
-			
+			PImage imagen = app.loadImage("../data/imports/"+nombre.replace(" ",  "").toLowerCase());
 			
 			if(netflix1[3].contentEquals("serie")) {
-				contenido.add(new Serie(imagefinal,nombre,año,rating,tipoc,app));
+				contenido.add(new Serie(imagen,nombre,año,rating,tipoc,app));
 				
 			}else {
 				
-				contenido.add(new Movie(imagefinal,nombre,año,rating,tipoc,app));
+				contenido.add(new Movie(imagen,nombre,año,rating,tipoc,app));
 			}
 			
 			
