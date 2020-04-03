@@ -27,7 +27,7 @@ public class Main extends PApplet {
 		for (int i=0;i<controlle.LiknedList().size();i++) {
 			
 			int posx= 100;
-			int posy= 50*(i+1);
+			int posy= 70*(i+1);
 			
 			controlle.LiknedList().get(i).draw(posx,posy);
 			
