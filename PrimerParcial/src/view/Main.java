@@ -24,7 +24,14 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		background(0);
-		
+		for (int i=0;i<controlle.LiknedList().size();i++) {
+			
+			int posx= 20;
+			int posy= 20*(i+1);
+			
+			controlle.LiknedList().get(i).draw(posx,posy);
+			
+		}
 	}
 	
 	public void keyPressed() {
