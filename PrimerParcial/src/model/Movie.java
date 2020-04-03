@@ -22,7 +22,7 @@ private int rating;
 	@Override
 	public int compareTo(ContenidoTipo o) {
 		
-		return this.rating + o.getRating();
+		return this.rating - o.getRating();
 	}
 
 }

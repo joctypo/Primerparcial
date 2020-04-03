@@ -3,6 +3,7 @@ package model;
 import java.util.*;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Logic {
 	private PApplet app;
@@ -11,8 +12,13 @@ public class Logic {
 	private AñoContenidoCompare acc;
 	private NombreContenidoCompare ncc;
 	private TipoContenidoCompare tcc;
-	
-	
+	private int ordenado;
+	private PImage breaking;
+	private PImage dark;
+	private PImage the;
+	private PImage ozark;
+	private PImage star;
+	private PImage mindhunter;
 	
 	
 	
@@ -23,6 +29,7 @@ public class Logic {
 		acc = new AñoContenidoCompare();
 		ncc = new NombreContenidoCompare();
 		tcc = new TipoContenidoCompare();
+		breaking=app.loadImage("../data/imports/img/breaingbad.jpg");
 		
 		info1=app.loadStrings("../data/imports/netflix.txt");
 		
@@ -59,19 +66,20 @@ public class Logic {
 		switch (i) {
 		case 0:
 			Collections.sort(contenido,ncc);
-			
+			ordenado=0;
 			break;
 
 		case 1:
 			Collections.sort(contenido,acc);
-			
+			ordenado=1;
 			break;
 		case 2:
 			Collections.sort(contenido);
-			
+			ordenado=2;
 			break;
 		case 3:
 			Collections.sort(contenido,tcc);
+			ordenado=3;
 			break;
 		}
 		
@@ -85,6 +93,39 @@ public class Logic {
 		this.contenido = contenido;
 	}
 	
-	
+	public void guardar() {
+		
+		String[] textico;
+		textico = new String[contenido.size()];
+		
+		for (int t=0;t<contenido.size();t++) {
+			String nombre= "Nombre: " + contenido.get(t).getNombre().toUpperCase();
+			String año="Año: " + contenido.get(t).getAño();
+			String rating= "Rating: " + contenido.get(t).getRating()+"%";
+			String tipo= "Tipo: " + contenido.get(t).getTipoc();
+			
+			textico[t] = nombre+año+rating+tipo;
+			
+			
+		}
+		
+		switch (ordenado) {
+		case 0:
+			app.saveStrings("./data/exports/nombre.txt", textico);
+			break;
+		case 1:
+			app.saveStrings("./data/exports/año.txt", textico);
+			break;
+		case 2:
+			app.saveStrings("./data/exports/rating.txt", textico);
+			break;
+		case 3:
+			app.saveStrings("./data/exports/tipo.txt", textico);
+			break;
+		
+		}
+		
+		
+	}
 
 }
