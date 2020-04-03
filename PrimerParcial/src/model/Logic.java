@@ -40,7 +40,7 @@ public class Logic {
 			int año=Integer.parseInt(netflix1[1]);
 			int rating = Integer.parseInt(netflix1[2]);
 			String tipoc = netflix1[3];
-			PImage imagen = app.loadImage("../data/imports/"+nombre.replace(" ",  "").toLowerCase());
+			PImage imagen = app.loadImage("../data/imports/img/"+nombre.replace(" ",  "").toLowerCase()+".jpg");
 			
 			if(netflix1[3].contentEquals("serie")) {
 				contenido.add(new Serie(imagen,nombre,año,rating,tipoc,app));

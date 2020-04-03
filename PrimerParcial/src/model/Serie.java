@@ -15,7 +15,7 @@ public class Serie extends ContenidoTipo{
 	public void draw(int posx,int posy) {
 		
 		app.textSize(20);
-		//app.image(getImagenfinal(), posx, posy);
+		app.image(getImagenfinal(), 10, posy,50,100);
 		app.text(getNombre()+" "+ getAño() + " " + getRating()+"% "+getTipoc()+ " ", posx, posy);
 	}
 	
