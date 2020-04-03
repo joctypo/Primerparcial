@@ -11,7 +11,8 @@ public class AñoContenidoCompare implements Comparator<ContenidoTipo>{
 	@Override
 	public int compare(ContenidoTipo arg0, ContenidoTipo arg1) {
 		// TODO Auto-generated method stub
-		return 0;
+		return arg0.getAño() - arg1.getAño();
+		
 	}
 
 }

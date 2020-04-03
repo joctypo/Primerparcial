@@ -5,9 +5,12 @@ import processing.core.PApplet;
 public class Movie extends ContenidoTipo{
 
 private PApplet app;
+private int rating;
 	public Movie(String nombre, int año, int rating, String tipoc, PApplet app) {
 		super(nombre,año,rating,tipoc,app);
 		this.app=app;
+		this.rating=rating;
+		
 	}
 
 	
@@ -18,8 +21,8 @@ private PApplet app;
 	}
 	@Override
 	public int compareTo(ContenidoTipo o) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return this.rating + o.getRating();
 	}
 
 }

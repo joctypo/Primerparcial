@@ -11,7 +11,7 @@ public class TipoContenidoCompare implements Comparator <ContenidoTipo>{
 	@Override
 	public int compare(ContenidoTipo o1, ContenidoTipo o2) {
 		// TODO Auto-generated method stub
-		return 0;
+		return o1.getTipoc().compareTo(o2.getTipoc());
 	}
 
 }
