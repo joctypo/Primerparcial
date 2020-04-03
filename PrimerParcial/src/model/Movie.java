@@ -1,13 +1,14 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Movie extends ContenidoTipo{
 
 private PApplet app;
 private int rating;
-	public Movie(String nombre, int año, int rating, String tipoc, PApplet app) {
-		super(nombre,año,rating,tipoc,app);
+	public Movie(PImage imagefinal, String nombre, int año, int rating, String tipoc, PApplet app) {
+		super(imagefinal,nombre,año,rating,tipoc,app);
 		this.app=app;
 		this.rating=rating;
 		
@@ -16,7 +17,7 @@ private int rating;
 	
 	public void draw(int posx,int posy) {
 		
-		
+		//app.image(getImagenfinal(), posx, posy);
 		app.text(getNombre()+" "+ getAño() + " " + getRating()+"% "+getTipoc()+ " ", posx, posy);
 	}
 	@Override

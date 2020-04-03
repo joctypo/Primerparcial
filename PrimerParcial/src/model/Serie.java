@@ -1,12 +1,13 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Serie extends ContenidoTipo{
  private PApplet app;
  private int rating;
-	public Serie(String nombre, int año, int rating, String tipoc, PApplet app) {
-		super(nombre,año,rating,tipoc,app);
+	public Serie(PImage imagefinal, String nombre, int año, int rating, String tipoc, PApplet app) {
+		super(imagefinal,nombre,año,rating,tipoc,app);
 		this.app=app;
 		this.rating = rating; 
 	}
@@ -14,6 +15,7 @@ public class Serie extends ContenidoTipo{
 	public void draw(int posx,int posy) {
 		
 		app.textSize(20);
+		//app.image(getImagenfinal(), posx, posy);
 		app.text(getNombre()+" "+ getAño() + " " + getRating()+"% "+getTipoc()+ " ", posx, posy);
 	}
 	

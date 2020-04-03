@@ -32,6 +32,14 @@ public class Main extends PApplet {
 			controlle.LiknedList().get(i).draw(posx,posy);
 			
 		}
+		
+		
+		text("Pulsa n para ordenar por nombre",20,500);
+		text("Pulsa a para ordenar por año",20,520);
+		text("Pulsa r para ordenar por rating",20,540);
+		text("Pulsa t para ordenar por tipo",20,560);
+		
+		
 	}
 	
 	public void keyPressed() {
